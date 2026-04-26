@@ -73,19 +73,38 @@ Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
   cy.wait(2000); // Buffer for any remaining requests
 });
 
-Cypress.Commands.add('refreshIfStillVisible', (selector, timeout = 20000) => {
-  cy.get('body').then(($body) => {
-    if ($body.find(selector).length) {
-      cy.get(selector, { timeout })
-        .should('not.be.visible')
-        .catch(() => {
-          cy.log(`${selector} still visible → refreshing`);
-          cy.reload();
-        });
-    } else {
-      cy.log(`${selector} not found, continuing`);
-    }
-  });
+Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout = 20000) => {
+
+  function check(retriesLeft) {
+    cy.get('body').then(($body) => {
+      const el = $body.find(selector)
+
+      // If element not found → done
+      if (!el.length) {
+        cy.log(`${selector} not found, continuing`)
+        return
+      }
+
+      // If element exists and is visible → retry or stop
+      if (Cypress.$(el).is(':visible')) {
+        if (retriesLeft === 0) {
+          throw new Error(`${selector} still visible after max retries`)
+        }
+
+        cy.log(`${selector} still visible → reloading (${retriesLeft} retries left)`)
+
+        cy.reload()
+
+        cy.wait(1000) // small buffer for page load
+
+        return check(retriesLeft - 1)
+      }
+
+      cy.log(`${selector} exists but not visible → continuing`)
+    })
+  }
+
+  check(maxRetries)
 });
 
 
