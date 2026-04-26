@@ -13,6 +13,8 @@ describe("Simulation Menu ", () => {
       return tests
         .open_the_graph("graph_id_1")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonSimulationdropdown();
         })
         .then(() => {
@@ -26,6 +28,8 @@ describe("Simulation Menu ", () => {
       return tests
         .open_the_graph("graph_id_1")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonSimulationdropdown();
         })
         .then(() => {
@@ -121,6 +125,8 @@ describe("0074: Verify the Revert Graph Functionlity in revision History.", () =
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Auth_hub_Username(username);
         })
         .then(() => {
@@ -145,6 +151,8 @@ describe("0074: Verify the Revert Graph Functionlity in revision History.", () =
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Username(username);
         })
         .then(() => {

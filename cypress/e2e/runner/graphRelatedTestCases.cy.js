@@ -19,6 +19,8 @@ describe("Graph related test case  ", () => {
       return tests
         .open_the_graph("graph_id_6")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Filter_Button();
         })
         .then(() => {
@@ -59,6 +61,8 @@ describe("Graph related test case  ", () => {
       return tests
         .open_the_graph("graph_id_6")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Filter_Button();
         })
         .then(() => {

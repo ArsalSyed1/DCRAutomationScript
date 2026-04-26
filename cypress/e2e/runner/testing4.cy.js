@@ -20,6 +20,8 @@ describe("testing 4 ", () => {
       return tests
         .open_the_graph("graph_id_9")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonapp();
         })
         .then(() => {
@@ -42,6 +44,8 @@ describe("testing 4 ", () => {
       return tests
         .open_the_graph("graph_id_9")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonapp();
         })
         .then(() => {
@@ -59,6 +63,8 @@ describe("testing 4 ", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_File_tab();
         })
         .then(() => {
@@ -78,6 +84,8 @@ describe("testing 4 ", () => {
       return tests
         .open_the_graph("graph_id_11")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -109,6 +117,8 @@ describe("testing 4 ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -122,6 +132,8 @@ describe("testing 4 ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -138,6 +150,8 @@ describe("testing 4 ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -177,6 +191,8 @@ describe("testing 4 ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -190,6 +206,8 @@ describe("testing 4 ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {

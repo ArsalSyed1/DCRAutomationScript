@@ -20,6 +20,8 @@ describe("testing 3", () => {
         tests
           .open_the_graph("graph_id_8")
           .then(() => {
+            cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
             return tests.Click_On_Simulate_Button();
           })
           .then(() => {
@@ -67,6 +69,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_5")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -114,6 +118,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_5")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -138,6 +144,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_5")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -162,6 +170,8 @@ describe("testing 3", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_6");
         })
         .then(() => {
@@ -191,6 +201,8 @@ describe("testing 3", () => {
         .open_the_graph("graph_id_6")
         .then(() => {
           console.log("0040A");
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -240,6 +252,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_6")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -281,6 +295,8 @@ describe("testing 3", () => {
         tests
           .open_the_graph("graph_id_8")
           .then(() => {
+            cy.wait(2000);
+            cy.refreshIfStillVisible('#appLogoContainer');
             return tests.Edit_process_title();
           })
           .then(() => {
@@ -308,6 +324,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_8")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Edit_process_title();
         })
         .then(() => {
@@ -330,6 +348,8 @@ describe("testing 3", () => {
       return tests
         .open_the_graph("graph_id_8")
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Edit_process_title();
         })
         .then(() => {
