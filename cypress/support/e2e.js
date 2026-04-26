@@ -40,6 +40,8 @@ afterEach(function () {
         logs: testLogs
       });
     }
+    cy.clearCookies();
+    cy.clearLocalStorage();
 });
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('dcrGetRaphaelObj is not defined')) {

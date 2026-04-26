@@ -73,7 +73,7 @@ Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
   cy.wait(2000); // Buffer for any remaining requests
 });
 
-Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout = 60000) => {
+/*Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout = 60000) => {
 
   function check(retriesLeft) {
     cy.get('body').then(($body) => {
@@ -106,7 +106,26 @@ Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout
   }
 
   check(maxRetries)
-});
+});*/
+
+Cypress.Commands.add('refreshIfStillVisible', (selector, timeout = 60000) => {
+  cy.log(`Waiting for loader lifecycle: ${selector}`)
+
+  cy.get('body', { timeout }).then(($body) => {
+    if ($body.find(selector).length) {
+      cy.get(selector, { timeout }).should('not.be.visible')
+    } else {
+      // Wait briefly to see if it appears
+      cy.wait(1000)
+
+      cy.get('body').then(($bodyRetry) => {
+        if ($bodyRetry.find(selector).length) {
+          cy.get(selector, { timeout }).should('not.be.visible')
+        }
+      })
+    }
+  })
+})
 
 
 
