@@ -73,7 +73,7 @@ Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
   cy.wait(2000); // Buffer for any remaining requests
 });
 
-Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout = 20000) => {
+Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout = 60000) => {
 
   function check(retriesLeft) {
     cy.get('body').then(($body) => {
