@@ -12,25 +12,40 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066A");
           return tests.Click_On_File_tab();
+          
         })
         .then(() => {
+          console.log("0066B");
           return tests.click_on_open_menu();
-        });
+        })
+        .then(() => {
+  return cy.contains('.modal-header', 'Open Process', { timeout: 60000 })
+    .should('be.visible')
+    .within(() => {
+      cy.get('button.close').click({ force: true });
+    });
+});
+      cy.get('#openGraphs').click();
     });
     it("Verify the Save as tab functionality", function () {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066C");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066D");
           return tests.click_on_Save_DCR_Process_As();
         })
         .then(() => {
+          console.log("0066E");
           return tests.enter_text("#saveAsGraphTitle", "Test Save As");
         })
         .then(() => {
+          console.log("0066F");
           return tests.click_on_Save_DCR_Process_As_button();
         });
     });
@@ -38,9 +53,11 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066G");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066H");
           return tests.Click_on_Export_as_xml();
         });
     });
@@ -49,9 +66,11 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066I");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066J");
           return tests.Click_on_Export_as_SVG();
         });
     });
@@ -59,9 +78,11 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066K");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066L");
           return tests.Click_on_Export_as_PNG();
         });
     });
@@ -69,9 +90,11 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066M");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066N");
           return tests.Click_on_show_Revision_History();
         });
     });
@@ -79,9 +102,11 @@ describe(" designer menu & insert Tab", () => {
       return tests
         .open_the_graph("graph_id_10")
         .then(() => {
+          console.log("0066O");
           return tests.Click_On_File_tab();
         })
         .then(() => {
+          console.log("0066P");
           return tests.Click_on_show_Revision_Details();
         });
     });
