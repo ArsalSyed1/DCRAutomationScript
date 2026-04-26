@@ -77,30 +77,31 @@ Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout
 
   function check(retriesLeft) {
     cy.get('body').then(($body) => {
-      const el = $body.find(selector)
-
-      // If element not found → done
-      if (!el.length) {
+      if (!$body.find(selector).length) {
         cy.log(`${selector} not found, continuing`)
         return
       }
 
-      // If element exists and is visible → retry or stop
-      if (Cypress.$(el).is(':visible')) {
-        if (retriesLeft === 0) {
-          throw new Error(`${selector} still visible after max retries`)
-        }
+      cy.get(selector, { timeout })
+        .should('not.be.visible')
+        .then(() => {
+          cy.log(`${selector} became invisible → continuing`)
+        })
+        .then(null, () => {
+          // this is the "catch" equivalent in Cypress
 
-        cy.log(`${selector} still visible → reloading (${retriesLeft} retries left)`)
+          if (retriesLeft === 0) {
+            throw new Error(`${selector} still visible after max retries`)
+          }
 
-        cy.reload()
+          cy.log(`${selector} still visible after ${timeout}ms → reloading (${retriesLeft} retries left)`)
 
-        cy.wait(5000) // small buffer for page load
+          cy.reload()
 
-        return check(retriesLeft - 1)
-      }
+          cy.wait(2000)
 
-      cy.log(`${selector} exists but not visible → continuing`)
+          return check(retriesLeft - 1)
+        })
     })
   }
 
