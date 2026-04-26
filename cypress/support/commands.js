@@ -59,6 +59,20 @@ Cypress.Commands.add("logMemoryUsage", () => {
   console.log("Memory Usage:", memoryUsage);
 });
 
+Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
+  cy.get('body').should('be.visible');
+  
+  // Wait for any loading indicators
+  cy.get('.loading, .spinner, .loading-overlay', { timeout: maxWait })
+    .should('not.exist');
+    
+  // Ensure JavaScript has loaded
+  cy.window().should('have.property', 'Cypress');
+  
+  // Wait for network to be idle (if using cy.intercept)
+  cy.wait(2000); // Buffer for any remaining requests
+});
+
 
 
 
