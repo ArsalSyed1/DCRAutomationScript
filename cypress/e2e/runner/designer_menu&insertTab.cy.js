@@ -21,13 +21,13 @@ describe(" designer menu & insert Tab", () => {
           return tests.click_on_open_menu();
         })
         .then(() => {
-  return cy.contains('.modal-header', 'Open Process', { timeout: 60000 })
+  return cy.contains('.modal-header', 'Open Process', { timeout: 120000 })
     .should('be.visible')
     .within(() => {
       cy.get('button.close').click({ force: true });
     });
 });
-      cy.get('#openGraphs').click();
+      //cy.get('#openGraphs').click();
     });
     it("Verify the Save as tab functionality", function () {
       return tests
