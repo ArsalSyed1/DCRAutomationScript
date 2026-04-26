@@ -112,6 +112,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
