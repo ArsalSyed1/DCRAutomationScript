@@ -20,6 +20,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
@@ -43,6 +44,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
@@ -57,6 +59,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
@@ -77,10 +80,13 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
+          cy.wait(2000);
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonSimulationdropdown();
         })
         .then(() => {
@@ -112,10 +118,12 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonSimulationdropdown();
         })
@@ -142,6 +150,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
@@ -172,6 +181,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
@@ -195,6 +205,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
@@ -222,6 +233,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
@@ -254,6 +266,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
@@ -275,6 +288,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
@@ -293,6 +307,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
@@ -316,6 +331,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.click_on_Category();
         })
@@ -339,6 +355,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.ScrollInto("Public category");
         })
@@ -360,6 +377,7 @@ describe("Verify all testcase", () => {
       return tests
         .open_the_graph("graph_id_17")
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
@@ -391,6 +409,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.wait(2000);
           cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_11");
         })

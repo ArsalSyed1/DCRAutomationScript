@@ -95,7 +95,7 @@ Cypress.Commands.add('refreshIfStillVisible', (selector, maxRetries = 3, timeout
 
         cy.reload()
 
-        cy.wait(1000) // small buffer for page load
+        cy.wait(5000) // small buffer for page load
 
         return check(retriesLeft - 1)
       }
