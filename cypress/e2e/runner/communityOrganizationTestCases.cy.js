@@ -48,6 +48,7 @@ describe(" Community Organization ", () => {
     it("Verify SimIT ", function () {
       return tests.visitpage().then(() => {
         return tests.open_the_graph("graph_id_2").then(() => {
+          cy.wait(5000); // Wait for 5 seconds to ensure the graph is fully loaded
           return tests.Click_On_Simulate_Button();
         });
       });
@@ -90,6 +91,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_4")
         .then(() => {
+          cy.wait(5000);
           return tests.clickonactivitybox("Activity0");
         })
 
@@ -143,6 +145,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_4")
         .then(() => {
+          cy.wait(5000);
           return tests.clickonactivitybox("Activity0");
         })
         .then(() => {
