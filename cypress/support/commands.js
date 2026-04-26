@@ -73,6 +73,21 @@ Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
   cy.wait(2000); // Buffer for any remaining requests
 });
 
+Cypress.Commands.add('refreshIfStillVisible', (selector, timeout = 20000) => {
+  cy.get('body').then(($body) => {
+    if ($body.find(selector).length) {
+      cy.get(selector, { timeout })
+        .should('not.be.visible')
+        .catch(() => {
+          cy.log(`${selector} still visible → refreshing`);
+          cy.reload();
+        });
+    } else {
+      cy.log(`${selector} not found, continuing`);
+    }
+  });
+});
+
 
 
 

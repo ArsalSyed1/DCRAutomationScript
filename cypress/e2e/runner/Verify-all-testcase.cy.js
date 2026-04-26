@@ -20,6 +20,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -42,6 +43,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -55,6 +57,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -74,6 +77,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
@@ -111,6 +115,7 @@ describe("Verify all testcase", () => {
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.clickonSimulationdropdown();
         })
         .then(() => {
@@ -136,6 +141,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -165,6 +171,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -187,6 +194,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.onlySearch();
         })
         .then(() => {
@@ -213,7 +221,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+         cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
@@ -245,7 +253,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
 
@@ -266,7 +274,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -284,7 +292,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.createprocesspage();
         })
         .then(() => {
@@ -307,7 +315,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.click_on_Category();
         })
         .then(() => {
@@ -330,7 +338,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.ScrollInto("Public category");
         })
         .then(() => {
@@ -351,7 +359,7 @@ describe("Verify all testcase", () => {
       return tests
         .open_the_graph("graph_id_17")
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -382,7 +390,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
-          cy.waitForPageLoad();
+          cy.refreshIfStillVisible('#appLogoContainer');
           return tests.open_the_graph("graph_id_11");
         })
         .then(() => {
