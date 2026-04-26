@@ -213,6 +213,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.open_the_graph("graph_id_1");
         })
         .then(() => {
@@ -244,6 +245,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.createprocesspage();
         })
 
@@ -264,6 +266,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.createprocesspage();
         })
         .then(() => {
@@ -281,6 +284,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.createprocesspage();
         })
         .then(() => {
@@ -303,6 +307,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.click_on_Category();
         })
         .then(() => {
@@ -325,6 +330,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.ScrollInto("Public category");
         })
         .then(() => {
@@ -345,6 +351,7 @@ describe("Verify all testcase", () => {
       return tests
         .open_the_graph("graph_id_17")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -375,6 +382,7 @@ describe("Verify all testcase", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.open_the_graph("graph_id_11");
         })
         .then(() => {

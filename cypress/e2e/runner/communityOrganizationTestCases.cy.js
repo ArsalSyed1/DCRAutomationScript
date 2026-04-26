@@ -18,6 +18,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_7")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_ActivityButton();
         })
         .then(() => {
@@ -47,8 +48,9 @@ describe(" Community Organization ", () => {
   describe("0007: Verify SimIT (4013 and 15319, 16702) (wwwdemo = 4013, 11972, 12107)", () => {
     it("Verify SimIT ", function () {
       return tests.visitpage().then(() => {
+        cy.waitForPageLoad();
         return tests.open_the_graph("graph_id_2").then(() => {
-          cy.wait(5000); // Wait for 5 seconds to ensure the graph is fully loaded
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         });
       });
@@ -91,7 +93,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_4")
         .then(() => {
-          cy.wait(5000);
+         cy.waitForPageLoad();
           return tests.clickonactivitybox("Activity0");
         })
 
@@ -129,7 +131,7 @@ describe(" Community Organization ", () => {
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
-          return cy.wait(5000);
+          return cy.waitForPageLoad();
         })
         .then(() => {
           return tests.Click_on_Start_Simulation_Button();
@@ -145,11 +147,11 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_4")
         .then(() => {
-          cy.wait(5000);
+          cy.waitForPageLoad();
           return tests.clickonactivitybox("Activity0");
         })
         .then(() => {
-          return cy.wait(8000);
+          return cy.waitForPageLoad();
         })
         .then(() => {
           return tests.Click_on_advance_Button();
@@ -170,6 +172,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_18")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -188,6 +191,7 @@ describe(" Community Organization ", () => {
     it("Verify guards functionality in graph, both in Sequence editor and in Simulation", function () {
       // if (!shouldRunTest('0061')) this.skip(); // Skip this test if TEST_CASE does not match
       return tests.visitpage().then(() => {
+        cy.waitForPageLoad();
         return tests.open_the_graph("graph_id_18");
       });
     });
@@ -197,6 +201,7 @@ describe(" Community Organization ", () => {
     it(" Verify all functionalities in Activity Option Panel ", function () {
       // if (!shouldRunTest('0061')) this.skip(); // Skip this test if TEST_CASE does not match
       return tests.visitpage().then(() => {
+        cy.waitForPageLoad();
         return tests.open_the_graph("graph_id_18");
       });
     });
@@ -205,6 +210,7 @@ describe(" Community Organization ", () => {
   describe("0080:Verify if public URL of graph is working.", () => {
     it("Verify if public URL of graph is working.", function () {
       return tests.open_the_graph("graph_id_4").then(() => {
+        cy.waitForPageLoad();
         return tests.Share_public_link();
       });
     });
@@ -213,6 +219,7 @@ describe(" Community Organization ", () => {
   describe("0085:Verify the functionality of Activity Stream by post comment, Like and Image..", () => {
     it("Verify if public URL of graph is working.", function () {
       return tests.open_the_graph("graph_id_4").then(() => {
+        cy.waitForPageLoad();
         return tests.Share_public_link();
       });
     });
@@ -221,6 +228,7 @@ describe(" Community Organization ", () => {
   describe("0088:Verify the Edit user profile Functionality.", () => {
     it("Verify the Edit user profile Functionality.", function () {
       return tests.open_the_graph("graph_id_4").then(() => {
+        cy.waitForPageLoad();
         return tests.Click_On_Comment_Button();
       });
     });
@@ -231,6 +239,7 @@ describe(" Community Organization ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.ClickonProfileIcon();
         })
         .then(() => {
@@ -252,6 +261,7 @@ describe(" Community Organization ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.click_on_Category();
         })
         .then(() => {
@@ -275,6 +285,7 @@ describe(" Community Organization ", () => {
       return tests
         .visitpage()
         .then(() => {
+          cy.waitForPageLoad();
           return tests.ScrollInto("Test Category");
         })
         .then(() => {
@@ -299,6 +310,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_13")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -330,6 +342,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_14")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
@@ -356,6 +369,7 @@ describe(" Community Organization ", () => {
       return tests
         .open_the_graph("graph_id_25")
         .then(() => {
+          cy.waitForPageLoad();
           return tests.Click_On_Simulate_Button();
         })
         .then(() => {
