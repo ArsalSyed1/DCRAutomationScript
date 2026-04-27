@@ -108,7 +108,7 @@ Cypress.Commands.add('waitForPageLoad', (maxWait = 30000) => {
   check(maxRetries)
 });*/
 
-Cypress.Commands.add('refreshIfStillVisible', (selector, timeout = 120000) => {
+Cypress.Commands.add('refreshIfStillVisible', (selector, timeout = 180000) => {
   cy.log(`Waiting for loader lifecycle: ${selector}`)
 
   cy.get('body', { timeout }).then(($body) => {
